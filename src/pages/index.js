@@ -1,5 +1,5 @@
-const homePage = require('./homePage.po');
+const gamePage = require('./gamePage.po');
 
 module.exports = {
-  homePage,
+  gamePage,
 };
