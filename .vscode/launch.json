@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "scenario",
+      "program": "${workspaceFolder}/node_modules/cucumber/bin/cucumber-js",
+      "args": [
+        "${workspaceFolder}/src/test/features/**/*.feature",
+        "-r",
+        "${workspaceFolder}/src/test/steps/*.js",
+        "--tags",
+        "@debug"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "scenario-win",
+      "program": "${workspaceFolder}\\node_modules\\cucumber\\bin\\cucumber-js",
+      "args": [
+        "${workspaceFolder}\\src\\test\\features\\**\\*.feature",
+        "-r",
+        "${workspaceFolder}\\src\\test\\steps\\**\\*.js",
+        "${workspaceFolder}\\src\\test\\steps\\*.js",
+        "--tags",
+        "@debug"
+      ]
+    }
+  ]
+}

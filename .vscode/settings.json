@@ -1,0 +1,12 @@
+{
+  "cucumberautocomplete.steps": [
+    "**/test/steps/*.js",
+    "**/test/steps/**/*.js"
+  ],
+  "cucumberautocomplete.syncfeatures": "**/*.feature",
+  "cucumberautocomplete.strictGherkinCompletion": true,
+  "settings": {},
+  "editor.cursorStyle": "line",
+  "workbench.colorCustomizations": {
+    "terminalCursor.foreground": "#f9fafc"
+}
