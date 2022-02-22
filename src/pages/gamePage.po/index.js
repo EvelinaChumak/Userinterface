@@ -19,6 +19,15 @@ class GamePage extends BaseForm {
   async isHelpBoxHidden() {
     return elements.btnHelp.state().isDisplayed();
   }
+
+  async acceptCookies() {
+    return elements.btnAcceptCoolies.click();
+  }
+
+  async isCokkiesInvisibility() {
+    return elements.btnAcceptCoolies.state().isExisting();
+  }
+
 }
 
 module.exports = new GamePage();
