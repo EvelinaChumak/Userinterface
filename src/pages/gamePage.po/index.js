@@ -28,6 +28,10 @@ class GamePage extends BaseForm {
     return elements.btnAcceptCoolies.state().isExisting();
   }
 
+  async getTime() {
+    return elements.txbTime.getText();
+  }
+
 }
 
 module.exports = new GamePage();

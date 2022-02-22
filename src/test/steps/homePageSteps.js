@@ -2,7 +2,9 @@ const { assert } = require('console');
 const { Given, When, Then } = require('cucumber');
 const expectChai = require('chai').expect;
 const { gamePage } = require('../../pages');
+const { TIME_START } = require('../../testData/infoOnPage')
 
+let time;
 
 Given(/^the user is on the game page$/, async () => {
   return expectChai(await gamePage.waitForFormIsOpened(), `Page "${gamePage.getFormName()}" is not opened`).to.be.true;
@@ -25,4 +27,13 @@ When(/^the user accept cookies$/, async () => {
 
 Then(/^cookies invisiable$/, async () => {
   return expectChai(await gamePage.isCokkiesInvisibility(), 'Cookies is not accepted').to.be.true
+});
+
+When(/^user watch on time$/, async () => {
+  time = await gamePage.getTime();
+});
+
+
+Then(/^time is 00:00:00$/, async () => {
+  return expectChai(time, 'Time not is ${TIME_START}').equal(TIME_START)
 });
