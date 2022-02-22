@@ -1,17 +1,16 @@
 const BaseForm = require('../../framework/baseForm');
 const elements = require('./elements');
 
-class GamePage extends BaseForm {
+class MainPage extends BaseForm {
 
   constructor() {
-    super(elements.btnHelp, 'Game page');
+    super(elements.btnHelp, 'main page');
   }
 
-  /**
-  * Get text from error message
-  * @param {string} text text for searching
-  * @returns {Promise<any>} result
-  */
+  async getPageNumber() {
+    return elements.lblPage.getText()
+  }
+
   async closeHelpBox() {
     return elements.btnHelp.click();
   }
@@ -29,9 +28,9 @@ class GamePage extends BaseForm {
   }
 
   async getTime() {
-    return elements.txbTime.getText();
+    return elements.lblTime.getText();
   }
 
 }
 
-module.exports = new GamePage();
+module.exports = new MainPage();
