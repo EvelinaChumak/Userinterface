@@ -13,7 +13,7 @@ BeforeAll(async () => {
 });
   
 Before(async (testCase) => {
-  Logger.info(`Run test "${testCase.pickle.name}" (${testCase.pickle.tags.filter((tag) => tag.name.startsWith('@tc'))[0].name})`);
+  //Logger.info(`Run test "${testCase.pickle.name}" (${testCase.pickle.tags.filter((tag) => tag.name.startsWith('@tc'))[0].name})`);
   await setupBrowser();
   await browser.setTimeout({ 'implicit': timeouts.implicit, 'pageLoad': timeouts.pageLoadTime });
   await browser.setWindowSize(1920, 1080);

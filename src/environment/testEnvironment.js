@@ -1,3 +1,3 @@
 module.exports = {
-  startUrl: 'https://www.google.by/',
+  startUrl: "https://userinyerface.com/game.html%20target=",
 };
