@@ -1,5 +1,5 @@
-const { Label} = require('../../framework/element');
+const { Label } = require("../../framework/element");
 
 module.exports = {
-  lblStart: new Label('//*[@class = "start__link"]', 'Start game'),
-}
+  lblStart: new Label('//*[@class = "start__link"]', "Start game"),
+};

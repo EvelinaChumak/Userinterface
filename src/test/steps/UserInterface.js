@@ -3,8 +3,8 @@ const { Given, When, Then } = require("cucumber");
 const { domain } = require("process");
 const expectChai = require("chai").expect;
 const { mainPage, welcomePage, loginForm } = require("../../pages");
-const Data  = require("../../testData/infoOnPage");
-const Random = require('../utils/random')
+const Data = require("../../testData/infoOnPage");
+const Random = require("../utils/random");
 
 let time;
 
@@ -42,19 +42,28 @@ When(/^user watch on time$/, async () => {
   time = await mainPage.getTime();
 });
 
-
 Then(/^time is 00:00:00$/, async () => {
-  return expectChai(time, `Time not is ${Data.TIME_START}`).equal(Data.TIME_START)
+  return expectChai(time, `Time not is ${Data.TIME_START}`).equal(
+    Data.TIME_START
+  );
 });
 
-
 When(/^the user filled in the field$/, async () => {
-  let lengthEmail = Math.floor(Math.random() * (Data.MAX_EMAIL_SYMBOLS - Data.MIN_EMAIL_SYMBOLS) + Data.MIN_EMAIL_SYMBOLS);
-  let lengthPass = Math.floor(Math.random() * (Data.MAX_PASS_SYMBOLS - Data.MIN_PASS_SYMBOLS) + Data.MIN_PASS_SYMBOLS);
+  let lengthEmail = Math.floor(
+    Math.random() * (Data.MAX_EMAIL_SYMBOLS - Data.MIN_EMAIL_SYMBOLS) +
+      Data.MIN_EMAIL_SYMBOLS
+  );
+  let lengthPass = Math.floor(
+    Math.random() * (Data.MAX_PASS_SYMBOLS - Data.MIN_PASS_SYMBOLS) +
+      Data.MIN_PASS_SYMBOLS
+  );
   let email = Random.getString(lengthEmail);
   let pass = Random.createPassword(lengthPass);
   let domain = Random.getDomian();
-  let domainNumber = Math.floor(Math.random() * (Data.FIRST_INDEX_IN_DOOM - Data.NUMBER_OF_DOMAINS) + Data.NUMBER_OF_DOMAINS);
+  let domainNumber = Math.floor(
+    Math.random() * (Data.FIRST_INDEX_IN_DOOM - Data.NUMBER_OF_DOMAINS) +
+      Data.NUMBER_OF_DOMAINS
+  );
   await loginForm.inputPassword(pass);
   await loginForm.inputEmail(email);
   await loginForm.inputDOmain(domain);
@@ -63,7 +72,6 @@ When(/^the user filled in the field$/, async () => {
   await loginForm.acceptTerms();
   await loginForm.clickNext();
 });
-
 
 Then(/^the user on the 2 page$/, async () => {
   number = await mainPage.getPageNumber();

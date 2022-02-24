@@ -1,14 +1,13 @@
-const BaseForm = require('../../framework/baseForm');
-const elements = require('./elements');
+const BaseForm = require("../../framework/baseForm");
+const elements = require("./elements");
 
 class MainPage extends BaseForm {
-
   constructor() {
-    super(elements.btnHelp, 'main page');
+    super(elements.btnHelp, "main page");
   }
 
   async getPageNumber() {
-    return elements.lblPage.getText()
+    return elements.lblPage.getText();
   }
 
   async closeHelpBox() {
@@ -30,7 +29,6 @@ class MainPage extends BaseForm {
   async getTime() {
     return elements.lblTime.getText();
   }
-
 }
 
 module.exports = new MainPage();

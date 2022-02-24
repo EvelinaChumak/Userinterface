@@ -1,6 +1,6 @@
 module.exports = class Random {
-
-  static characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,?!@#%^&*()_+№;:_+";
+  static characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,?!@#%^&*()_+№;:_+";
   static charactersLength = Random.characters.length;
 
   static digits = "0123456789";
@@ -18,9 +18,15 @@ module.exports = class Random {
         Math.floor(Math.random() * this.charactersLength)
       );
     }
-    password += this.digits.charAt(Math.floor(Math.random() * this.digits.length));
-    password += this.letersUp.charAt(Math.floor(Math.random() * this.letersUp.length));
-    password += this.letersLow.charAt(Math.floor(Math.random() * this.letersLow.length));
+    password += this.digits.charAt(
+      Math.floor(Math.random() * this.digits.length)
+    );
+    password += this.letersUp.charAt(
+      Math.floor(Math.random() * this.letersUp.length)
+    );
+    password += this.letersLow.charAt(
+      Math.floor(Math.random() * this.letersLow.length)
+    );
     password += email.charAt(Math.floor(Math.random() * email.length));
     return password;
   }
@@ -28,7 +34,9 @@ module.exports = class Random {
   static getString(length) {
     let res = "";
     for (let i = 0; i < length; i++) {
-      res += this.characters.charAt(Math.floor(Math.random() * this.charactersLength));
+      res += this.characters.charAt(
+        Math.floor(Math.random() * this.charactersLength)
+      );
     }
     return res;
   }
